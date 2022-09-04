@@ -42,9 +42,17 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
+function search(city) {
+  let apiKey = "c1b6dbd5f5a0d88ca364829bf8480754";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-let apiKey = "c1b6dbd5f5a0d88ca364829bf8480754";
-let city = "Rivne";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city-search");
+  search(cityElement.value);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);

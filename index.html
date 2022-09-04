@@ -35,6 +35,39 @@
     <div class="conteiner">
       <div class="weather-app-wrap">
         <div class="weather-app">
+          <div class="input-group">
+            <form id="search-form">
+              <div class="row">
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter your city"
+                    aria-label="Recipient's username with two button addons"
+                    id="city-search"
+                  />
+                </div>
+                <div class="col-3">
+                  <button
+                    type="submit"
+                    class="btn btn-primary w-100"
+                    id="searching"
+                  >
+                    Search
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button
+                    type="submit"
+                    class="btn btn-success w-100"
+                    id="current-button"
+                  >
+                    Current
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
           <h1 id="city-name"></h1>
           <div class="row">
             <div class="col-md-4">
@@ -47,7 +80,7 @@
             </div>
             <div class="col-md-4">
               <div class="central-block">
-                <img src="" alt="Clear" id="icon" class="float-left" />
+                <img src="" id="icon" class="float-left" />
                 <span class="temperature" id="current-temperature"></span>
                 <span class="units">
                   <a href="#" id="celsius-link"> °C</a>/
