@@ -55,7 +55,9 @@ body {
 .active {
   color: black;
   cursor: default;
-}
-.active:hover {
   text-decoration: none;
+}
+.central-block .active:hover {
+  text-decoration: none;
+  color: black;
 }
