@@ -52,3 +52,10 @@ li {
 body {
   background-image: url("../media/skyimage.jpg");
 }
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+}
