@@ -21,7 +21,30 @@ function formatDate(timestamp) {
 
   return `${day} ${hours}: ${minutes}`;
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
 
+  let forecastHTML = `<div class="card-group">`;
+  forecastHTML =
+    forecastHTML +
+    `  <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Mon</h5>
+              <p class="card-text">
+                <img src="" id="icon" />
+              </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted-max">27°</small>
+              <small class="text-muted-min">12°</small>
+            </div>
+          </div>`;
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+//
+//
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#current-temperature");
@@ -84,5 +107,5 @@ fahrenheitLink.addEventListener("click", fahrenheitConvertation);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", celsiusConvertation);
-
+displayForecast();
 search("Rivne");
