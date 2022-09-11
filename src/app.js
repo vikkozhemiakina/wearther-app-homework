@@ -113,4 +113,20 @@ function handleSubmit(event) {
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
+function showCurrentPosition(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let unit = "metric";
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+
+  axios.get(apiUrl).then(showWeather);
+}
+function getCurrentPosition() {
+  navigator.geolocation.getCurrentPosition(showCurrentPosition);
+}
+
+let button = document.querySelector("#current-button");
+button.addEventListener("submit", getCurrentPosition);
+
 search("Rivne");
