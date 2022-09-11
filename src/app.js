@@ -25,11 +25,13 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="card-group">`;
-  forecastHTML =
-    forecastHTML +
-    `  <div class="card">
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sut", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `  <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Mon</h5>
+              <h5 class="card-title">${day}</h5>
               <p class="card-text">
                 <img src="" id="icon" />
               </p>
@@ -39,6 +41,7 @@ function displayForecast() {
               <small class="text-muted-min">12°</small>
             </div>
           </div>`;
+  });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
